@@ -51,6 +51,12 @@
 						return false;
 					}
 
+					// Let's not put menus and footers in draft mode
+					if (curr._global) {
+						mbrApp.alertDlg("Sorry, global blocks likes menus and footers can't be put in draft mode.");
+						return false;
+					}
+
 					// Let's jQuery the HTML, so we can do fun stuff with it. We wrap a div around it, so "find()" can find the <section>
 					var j = $("<div>" + curr._customHTML + "</div>");
 
