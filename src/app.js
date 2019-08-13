@@ -57,8 +57,20 @@
 						return false;
 					}
 
+					// If no _customHTML exists, it's probably a "component.js" kinda block
+					if (!curr._customHTML) {
+						mbrApp.alertDlg("Sorry, this block doesn't support draft mode.");
+						return false;
+					}
+
 					// Let's jQuery the HTML, so we can do fun stuff with it. We wrap a div around it, so "find()" can find the <section>
 					var j = $("<div>" + curr._customHTML + "</div>");
+
+					// Check if the _customHTML contains a section tag
+					if (!j.find(":first-child").is("section")) {
+						mbrApp.alertDlg("Draft mode is not supported, as the block does not contain a &lt;section&gt;-tag.");
+						return false;
+					}
 
 					// Check if the block is in draft mode
 					if (j.find("section").hasClass("witsec-draft-mode")) {

@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v3 (2019-08-13)
+
+- Added additional error messages if the user wants to put certain blocks in draft mode that don't support it
+
 ## v2 (2019-08-11)
 
 - Removed draft feature for global blocks like menus and footers
