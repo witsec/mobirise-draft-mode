@@ -99,10 +99,16 @@
 					b = b.replace(/<!DOCTYPE html>/igm, "");					
 					b = b.replace(/<([/]?)(html|head|body)/igm, "<$1$2x");
 
+					// Hide PHP using HTML comment tags, as jQuery doesn't understand these tags and distorts them beyond repair
+					b = b.replace(/(<\?[\w\W]+?\?>)/gmi, "<!--$1-->");
+
 					// Remove draft blocks
 					j = $(b);
 					j.find(".witsec-draft-mode").remove();
 					b = j.prop('outerHTML');
+
+					// Restore PHP tags to their former glory
+					b = b.replace(/<!--(<\?[\w\W]+?\?>)-->/gmi, "$1");
 
 					// Rename the elements back	and re-add DOCTYPE				
 					b = b.replace(/<([/]?)(html|head|body)x/igm, "<$1$2");
