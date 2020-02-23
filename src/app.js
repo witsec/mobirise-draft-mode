@@ -93,36 +93,16 @@
 					});
 				});				
 
-				// Remove any block that's in draft mode
-				a.addFilter("publishHTML", function(b) {
-					// Remove any code before DOCTYPE (don't worry, we'll put it back later)
-					var pattern = /^([\w\W]*?)<!DOCTYPE html>/mi;
-					var beforeDocType = b.match(pattern);
-					b = b.replace(pattern, "");
+				// Empty the entire block if the section tag contains the witsec-draft-mode class
+				a.Core.addFilter("getResultHTMLcomponent", function(html, block) {
 
-					// Rename html/head/body elements and remove DOCTYPE, so we don't lose them when we want to get them back from jQuery (there must be a better way, right?)
-					b = b.replace(/<!DOCTYPE html>/im, "");
-					b = b.replace(/<([/]?)(html|head|body)/igm, "<$1$2x");
+					if ( /<\s*section[^>]*witsec-draft-mode[^>]*>/gmi.test(html) ) {
+						html = "";
+					}
 
-					// Hide PHP using HTML comment tags, as jQuery doesn't understand these tags and distorts them beyond repair
-					b = b.replace(/(<\?[\w\W]+?\?>)/gmi, "<!--$1-->");
-
-					// Remove draft blocks using jQuery
-					j = $(b);
-					j.find(".witsec-draft-mode").remove();
-					b = j.prop('outerHTML');
-
-					// Restore PHP tags to their former glory
-					b = b.replace(/<!--(<\?[\w\W]+?\?>)-->/gmi, "$1");
-
-					// Rename the elements back
-					b = b.replace(/<([/]?)(html|head|body)x/igm, "<$1$2");
-
-					// re-add code (if any) before DOCTYPE, including DOCTYPE itself
-					b = (beforeDocType ? beforeDocType[1] : "") + "<!DOCTYPE html>\n" + b;
-
-					return b
+					return html;
 				});
+
 			}
         }
     })

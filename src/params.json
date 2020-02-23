@@ -1,10 +1,10 @@
 {
-    "name": "Draft Mode v5",
+    "name": "Draft Mode v6",
     "alias": "witsec-draft-mode",
-    "version": 5,
+    "version": 6,
     "minAppVersion": "4",	
     "appScript": true,
     "coreScript" : false,
 	"description":"With this extension you can place blocks in draft mode, so they won't get published. <a href='https://witsec.nl'>Learn more...</a>",
-	"logo":"thumbnail.png"
+	"logo":"thumbnail.svg"
 }
