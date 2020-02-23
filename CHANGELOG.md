@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v6 (2020-02-23)
+
+- Overhauled the publishing method. If there's PHP in the HTML, it will never get distorted anymore
+
 ## v5 (2020-01-02)
 
 - Fixed a bug so code before !DOCTYPE is handled properly
