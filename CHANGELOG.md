@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v7 (2020-03-14)
+
+- Fixed compatibility with Mobirise v5
+
 ## v6 (2020-02-23)
 
 - Overhauled the publishing method. If there's PHP in the HTML, it will never get distorted anymore

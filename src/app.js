@@ -1,4 +1,4 @@
-(function(jQuery, mbrApp) {
+defineM("witsec-draft-mode", function(g, mbrApp, tr) {
 
 	var curr, compIndex;
     mbrApp.regExtension({
@@ -10,7 +10,7 @@
 					var h = jQuery(a);
 
 					// Add edit button to component buttons
-					var btn = '<span class="mbr-btn mbr-btn-default mbr-icon-edit witsec-draft-mode-shortcut" data-tooltipster="bottom" title="Toggle Draft"></span><style>.witsec-draft-mode-shortcut:hover { background-color: #42a5f5 !important; }</style>';
+					var btn = '<span class="mbr-btn mbr-btn-default mbr-icon-edit witsec-draft-mode-shortcut" data-tooltipster="bottom" title="Toggle Draft"></span><style>.witsec-draft-mode-shortcut:hover { background-color: #42a5f5 !important; color: #fff !important }</style>';
 					if (h.find(".component-params").length)
 						h.find(".component-params").before(btn);
 					else if (h.find(".component-remove").length)
@@ -106,4 +106,4 @@
 			}
         }
     })
-})(jQuery, mbrApp);
+}, ["jQuery", "mbrApp", "TR()"]);
