@@ -6,6 +6,10 @@ defineM("witsec-draft-mode", function(g, mbrApp, tr) {
         events: {		
             beforeAppLoad: function() {
                 mbrApp.Core.addFilter("prepareComponent", function(a, b) {
+					// Check if current theme is an old M/M3 theme (as Draft Mode isn't available there)
+					if (mbrApp.theme.type === "primary")
+						return a;
+
 					// 'a' is the component window's HTML as string. We need to jQuery that, so we can do magic stuff with it
 					var h = jQuery(a);
 
@@ -25,6 +29,10 @@ defineM("witsec-draft-mode", function(g, mbrApp, tr) {
 			},
 
 			load: function() {
+				// Check if current theme is an old M/M3 theme (as Draft Mode isn't available there)
+				if (mbrApp.theme.type === "primary")
+					return false;
+
                 var a = this;
 
 				a.$template.on("click", ".witsec-draft-mode-shortcut", function(e) {

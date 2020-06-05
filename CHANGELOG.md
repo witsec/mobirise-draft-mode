@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v8 (2020-06-06)
+
+- Added check if current theme is a 'primary' theme (M/M3), in which case Draft Mode is not available
+
 ## v7 (2020-03-14)
 
 - Fixed compatibility with Mobirise v5
