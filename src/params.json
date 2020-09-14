@@ -1,7 +1,7 @@
 {
-    "name": "Draft Mode v8",
+    "name": "Draft Mode v9",
     "alias": "witsec-draft-mode",
-    "version": 8,
+    "version": 9,
     "minAppVersion": "4",	
     "appScript": true,
     "coreScript" : false,
