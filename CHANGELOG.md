@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v10 (2025-03-18)
+
+- Fixed draft icon for Mobirise v6.0.3 and after
+
 ## v9 (2020-09-14)
 
 - Fixed compatilibity with footers that have the 'always-bottom' attribute

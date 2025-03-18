@@ -14,7 +14,7 @@ defineM("witsec-draft-mode", function(g, mbrApp, tr) {
 					var h = jQuery(a);
 
 					// Add edit button to component buttons
-					var btn = '<span class="mbr-btn mbr-btn-default mbr-icon-edit witsec-draft-mode-shortcut" data-tooltipster="bottom" title="Toggle Draft"></span><style>.witsec-draft-mode-shortcut:hover { background-color: #42a5f5 !important; color: #fff !important }</style>';
+					var btn = '<span class="mbr-btn mbr-btn-default mbr-icon-edit mbr-icon-pencil witsec-draft-mode-shortcut" data-tooltipster="bottom" title="Toggle Draft"></span><style>.witsec-draft-mode-shortcut:hover { background-color: #42a5f5 !important; color: #fff !important }</style>';
 					if (h.find(".component-params").length)
 						h.find(".component-params").before(btn);
 					else if (h.find(".component-remove").length)
